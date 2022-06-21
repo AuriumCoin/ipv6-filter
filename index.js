@@ -66,12 +66,12 @@ function _isValid(addr) {
     const isIPv4 = IPv4Range.contains(addr);
     if (isIPv4) {
         for (const range of IPv4Classes) {
-            if (!range.contains(addr)) return false;
+            if (range.contains(addr)) return false;
         }
         return true;
     } else {
         for (const range of IPv6Classes) {
-            if (!range.contains(addr)) return false;
+            if (range.contains(addr)) return false;
         }
         return true;
     }
