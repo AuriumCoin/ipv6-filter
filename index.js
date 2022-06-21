@@ -29,3 +29,50 @@ const IPv6C7 = ip6addr.createAddrRange('2002::', '2002:ffff:ffff:ffff:ffff:ffff:
 const IPv6C8 = ip6addr.createAddrRange('fc00::', 'fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff');
 const IPv6C9 = ip6addr.createAddrRange('fe80::', 'fe80::ffff:ffff:ffff:ffff');
 const IPv6C10 = ip6addr.createAddrRange('ff00::', 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'); // Mutlicast Range
+
+const IPv4Classes = [
+    IPv4C0,
+    IPv4C1,
+    IPv4C2,
+    IPv4C3,
+    IPv4C4,
+    IPv4C5,
+    IPv4C6,
+    IPv4C7,
+    IPv4C8,
+    IPv4C9,
+    IPv4C10,
+    IPv4C11,
+    IPv4C12,
+    IPv4C13,
+    IPv4C14
+]
+
+const IPv6Classes = [
+    IPv6C0,
+    IPv6C1,
+    IPv6C2,
+    IPv6C3,
+    IPv6C4,
+    IPv6C5,
+    IPv6C6,
+    IPv6C7,
+    IPv6C8,
+    IPv6C9,
+    IPv6C10
+]
+
+function _isValid(addr) {
+    const isIPv4 = IPv4Range.contains(addr);
+    if (isIPv4) {
+        for (const range of IPv4Classes) {
+            if (!range.contains(addr)) return false;
+        }
+        return true;
+    } else {
+        for (const range of IPv6Classes) {
+            if (!range.contains(addr)) return false;
+        }
+        return true;
+    }
+}
