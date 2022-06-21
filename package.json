@@ -1,0 +1,19 @@
+{
+  "name": "ipv6-filter",
+  "version": "1.0.0",
+  "description": "Detect if IPv6 Address is not a public address.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuriumCoin/ipv6-filter.git"
+  },
+  "author": "@AuriumDev (github)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AuriumCoin/ipv6-filter/issues"
+  },
+  "homepage": "https://github.com/AuriumCoin/ipv6-filter#readme",
+  "dependencies": {
+    "@auriumdev/ip6addr": "^0.0.1"
+  }
+}
